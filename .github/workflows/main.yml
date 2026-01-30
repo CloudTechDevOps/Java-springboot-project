@@ -97,9 +97,9 @@ jobs:
             cd /home/ec2-user/app/target
 
             sudo nohup java -jar datastore-0.0.7.jar \
-              --SPRING_DATASOURCE_URL="jdbc:mysql://database-1.ctgmi2ai8md3.us-west-2.rds.amazonaws.com:3306/datastore?createDatabaseIfNotExist=true" \
-              --SPRING_DATASOURCE_USERNAME="admin" \
-              --SPRING_DATASOURCE_PASSWORD="cloud123" \
+              --MYSQL_HOST="jdbc:mysql://database-1.ctgmi2ai8md3.us-west-2.rds.amazonaws.com:3306/datastore?createDatabaseIfNotExist=true" \
+              --MYSQL_USERNAME="admin" \
+              --MYSQL_PASSWORD="cloud123" \
               --LOG_FILE_PATH="/var/log/app/datastore.log" \
-              --SERVER_PORT=8084 > /var/log/app/nohup.out 2>&1 &
+              --server.port=8084 > /var/log/app/nohup.out 2>&1 &
             echo "🚀 New Application Started"
