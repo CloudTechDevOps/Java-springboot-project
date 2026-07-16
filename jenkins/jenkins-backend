@@ -1,9 +1,10 @@
 pipeline {
-    agent any
-
+    agent {
+    label 'slave'
+}
     environment {
         AWS_REGION      = "us-east-1"
-        AWS_ACCOUNT_ID  = "341221860475"
+        AWS_ACCOUNT_ID  = "691304835383"
 
         ECR_REPO        = "backend"
         IMAGE_TAG       = "${BUILD_NUMBER}"
@@ -24,7 +25,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/CloudTechDevOps/Java-springboot-project.git'
+                    url: 'https://github.com/Naveen3990/Java-springboot-project1.git'
             }
         }
 
@@ -69,10 +70,10 @@ pipeline {
                   --name ${CONTAINER_NAME} \
                   --restart always \
                   -p 8084:8084 \
-                  -e MYSQL_HOST=database-1.c8lweogi44to.us-east-1.rds.amazonaws.com \
+                  -e MYSQL_HOST=database-1.ckvmuee8490c.us-east-1.rds.amazonaws.com \
                   -e MYSQL_PORT=3306 \
                   -e MYSQL_USERNAME=admin \
-                  -e MYSQL_PASSWORD=Cloud123 \
+                  -e MYSQL_PASSWORD=admin123 \
                   ${IMAGE_URI}
                 '''
             }
