@@ -8,7 +8,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /app
 
 # Set environment variable
-ENV API_URL=http://44.202.62.92:8084
+ENV API_URL=http://172.31.27.84:8084
 
 EXPOSE 8501
 
