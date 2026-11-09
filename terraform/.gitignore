@@ -1,0 +1,8 @@
+# Terraform state, plan files, and local secret inputs must not be committed.
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfplan
+terraform.tfvars
+terraform.tfvars.json
+crash.log
